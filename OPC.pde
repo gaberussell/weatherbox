@@ -319,7 +319,6 @@ public class OPC
     }
 
     try {
-      println(packetData);
       output.write(packetData);
     } catch (Exception e) {
       dispose();
