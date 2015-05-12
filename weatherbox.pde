@@ -10,6 +10,13 @@ View current_view = View.CLEAR_DAY;
 RainView rain;
 SnowView snow;
 ClearDayView clear_day;
+ClearNightView clear_night;
+WindView wind;
+FogView fog;
+CloudyView cloudy_view;
+PartlyCloudyDayView partly_cloudy_day;
+PartlyCloudyNightView partly_cloudy_night;
+
 
 void setup()
 {
@@ -51,7 +58,6 @@ void draw()
     if (new_view != current_view) {
       switchView(new_view);      
     }
-
   }
 
   // draw next frame of current view
@@ -78,6 +84,12 @@ void initScenes(){
   rain = new RainView(1);
   snow = new SnowView(2);
   clear_day = new ClearDayView();
+  clear_night = new ClearNightView();
+  wind = new WindView();
+  fog = new FogView();
+  cloudy_view = new CloudyView();
+  partly_cloudy_day = new PartlyCloudyDayView();
+  partly_cloudy_night = new PartlyCloudyNightView();
 }
 
 void drawView(View view){
@@ -91,20 +103,24 @@ void drawView(View view){
     case CLEAR_DAY:
       clear_day.advance();
       break;
-    // case CLEAR_NIGHT:
-    //   break;
+    case CLEAR_NIGHT:
+      clear_night.advance();
+      break;
     // case SLEET:
     //   break;
-    // case WIND:
-    //   break;
-    // case FOG:
-    //   break;
-    // case CLOUDY:
-    //   break;
-    // case PARTLY_CLOUDY_DAY:
-    //   break;
+    case WIND:
+      wind.advance();
+      break;
+    case FOG:
+      fog.advance();
+      break;
+    case CLOUDY:
+      break;
+    case PARTLY_CLOUDY_DAY:
+      partly_cloudy_day.advance();
+      break;
     case PARTLY_CLOUDY_NIGHT:
-      rain.advance(); 
+      partly_cloudy_night.advance(); 
       break;
 
   }
