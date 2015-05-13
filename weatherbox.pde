@@ -4,7 +4,6 @@ OPC opc;
 PFont font;
 
 Server cueServer;
-Client cueClient;
 View current_view = View.CLEAR_DAY;
 
 RainView rain;
@@ -45,6 +44,7 @@ void draw()
     // get string from client and reformat so it can be matched against View enum
     String cue = cueClient.readString().trim().toUpperCase().replace("-", "_");
     println("Received cue: " + cue);
+    // cueClient.stop();
 
     View new_view = null;
     try {
@@ -115,6 +115,7 @@ void drawView(View view){
       fog.advance();
       break;
     case CLOUDY:
+      cloudy_view.advance();
       break;
     case PARTLY_CLOUDY_DAY:
       partly_cloudy_day.advance();

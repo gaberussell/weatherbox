@@ -2,7 +2,7 @@ class ClearNightView {
   PImage moon;
   
   ClearNightView() {
-  moon = loadImage("ClearNight.png")
+  moon = loadImage("ClearNight.png");
 
   }
 
