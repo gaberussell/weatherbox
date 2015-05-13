@@ -10,7 +10,7 @@ class WindView {
 
   void advance() {
       background(0);
-      x += 5;
+      x += 30;
       image(wind, x, 0, width, height);
 
       // reset to left of frame if we've gone off the right end

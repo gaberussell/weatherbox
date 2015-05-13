@@ -21,7 +21,8 @@ void setup()
 {
   size(360, 360);
   // Connect to the local instance of fcserver
-  opc = new OPC(this, "127.0.0.1", 7890);
+  // opc = new OPC(this, "127.0.0.1", 7890);
+  opc = new OPC(this, "192.168.0.18", 7890);
 
   // Map an 8x8 grid of LEDs to the center of the window
   opc.ledGrid8x7(0, width/2, height/2, height / 10.0, 0, false);
@@ -31,7 +32,7 @@ void setup()
   font = createFont("Arial Bold",48);
   
   initScenes(); 
-
+  frameRate(10);
 }
 
 void draw()

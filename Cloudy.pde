@@ -11,7 +11,7 @@ class CloudyView {
   void advance() {
       background(100);
       x += 10;
-      image(cloud, x, height * 0.6, width * 0.8, height * 0.8);
+      image(cloud, x, height * 0.2, width * 0.6, height * 0.6);
 
       // reset to left of frame if we've gone off the right end
       if (x > width) {
